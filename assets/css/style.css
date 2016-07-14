@@ -1,0 +1,44 @@
+
+.container-narrow {
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+div {
+    display: block;
+}
+
+body {
+	padding-right: 300px;
+    padding-left: 300px;
+	background: #99ffd6;
+	font-family: 'Poiret One', cursive;
+}
+
+.jumbotron {
+    background-color: #99ffd6 !important; 
+    color: #00bfff;
+    height: 170px;
+}
+
+h1, h3 {
+	font-family: 'Bangers', cursive;
+}
+
+
+
+.instructions {
+	background: #00bfff;
+	color: #99ffd6;
+	font-size: 14px;
+
+}
+
+.crystalImage {
+	width: 50px;
+    height: 50px;
+}
+
+.record {
+	background: ;
+}
