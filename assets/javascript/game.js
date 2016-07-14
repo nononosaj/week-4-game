@@ -2,7 +2,7 @@
   // Initial game set up
 function setup () {
 
-    var numberToGuess = 53;
+    var numberToGuess = ;
     var counter = 0;
     var numbers = [10, 5, 3, 7]; 
     var playerWins = 0;
@@ -16,7 +16,7 @@ function setup () {
             x = a[i - 1];
             a[i - 1] = a[j];
             a[j] = x;
-        }
+        
 
         shuffle(numbers);
         console.log(numbers);
@@ -30,7 +30,15 @@ function setup () {
   // Function to add images
 function loadImages(picArray) {
 
-  var picArray = ["assets/gem1.jpeg", "assets/images/gem2.jpg", "assets/images/gem3.jpg", "assets/images/gem4.jpg"];
+  var picArray = ["assets/images/gem1.jpeg", "assets/images/gem2.jpg", "assets/images/gem3.jpg", "assets/images/gem4.jpg"];
+
+//    $(document).ready(function() {
+//     var $div = $("#picArray");
+
+//     $.each(picArray, function(i, val) {
+//         $("<img />").attr("src", val).appendTo($div);
+//     });
+// });
 
    $('#number').text(array[0]);
 
@@ -58,6 +66,8 @@ function loadImages(picArray) {
   })
 }
 
+
+  // Function created for when you click on the image you get a random number
   $('.crystalImage').on('click', function(){
 
       counter = counter + parseInt($(this).data('num'));
