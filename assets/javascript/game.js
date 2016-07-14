@@ -21,13 +21,14 @@ function setup () {
         shuffle(numbers);
         console.log(numbers);
 
-        var retArr;
+        var retArr = [numberToGuess, numbers];
+        return retArr;
 
       }
   
 
   // Function to add images
-function loadImages(array) {
+function loadImages(picArray) {
 
   var picArray = ["assets/gem1.jpeg", "assets/images/gem2.jpg", "assets/images/gem3.jpg", "assets/images/gem4.jpg"];
 
