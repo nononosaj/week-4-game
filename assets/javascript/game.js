@@ -1,121 +1,120 @@
 
-  // Initial game set up
-function setup () {
+	// Array for ids using variable gems. Start at 0 for a value.
+	var gems = {
 
-    var numberToGuess = ;
-    var counter = 0;
-    var numbers = [10, 5, 3, 7]; 
-    var playerWins = 0;
-    var playerLosses = 0;
+	#blue: 0;	
+	#pink: 0;
+	#orange: 0;
+	#red: 0
+};
+
+	// Variables for score, number to guess, and record.
+	var currentScore = 0;
+	var numberToGuess = 0;
+	var playerWins = 0;
+	var playerLosses = 0;
+
 
      // Function to shuffle numbers from images
-    function shuffle(a) {
-        var j, x, i;
-        for (i = a.length; i; i--) {
-            j = Math.floor(Math.random() * i);
-            x = a[i - 1];
-            a[i - 1] = a[j];
-            a[j] = x;
+    // function shuffle(a) {
+
+    //     var j, x, i;
+
+    //     for (i = a.length; i; i--) {
+
+    //         j = Math.floor(Math.random() * i);
+
+    //         x = a[i - 1];
+
+    //         a[i - 1] = a[j];
+
+    //         a[j] = x;
         
 
-        shuffle(numbers);
-        console.log(numbers);
+    //     shuffle(numbers);
+    //     console.log(numbers);
 
-        var retArr = [numberToGuess, numbers];
-        return retArr;
+    //     var retArr = [numberToGuess, numbers];
+    //     return retArr;
 
-      }
-  
-
-  // Function to add images
-function loadImages(picArray) {
-
-  var picArray = ["assets/images/gem1.jpeg", "assets/images/gem2.jpg", "assets/images/gem3.jpg", "assets/images/gem4.jpg"];
-
-//    $(document).ready(function() {
-//     var $div = $("#picArray");
-
-//     $.each(picArray, function(i, val) {
-//         $("<img />").attr("src", val).appendTo($div);
-//     });
-// });
-
-   $('#number').text(array[0]);
-
-    for (var i=0; i< array[1].length; i++){
-
-      var imageCrystal = $('<img>');
-
-      imageCrystal.attr('data-num', array[0][i]);
-
-      imageCrystal.attr('src', picArray[i]);
-
-      imageCrystal.attr('alt', 'crystals');
-
-      imageCrystal.addClass('crystalImage');
-
-      $('#crystals').append(imageCrystal);
-    }
+    //   }
 
 
-  $( document ).ready(function() {
+// Game start
+var startGame = function() {
+	
+	yourNumber = 0;
 
-    var array = setup()
+	//  Chooses a random number between 19 and 120
+	numberToGuess = Math.floor(Math.random() * 120) + 19 
 
-    loadImages(array)
-  })
+	// Each gem has a random number value between 1 and 12
+	gems.blue.value = Math.floor(Math.random() * 12) + 1  
+	gems.pink.value = Math.floor(Math.random() * 12) + 1  
+	gems.orange.value = Math.floor(Math.random() * 12) + 1  
+	gems.red.value 	= Math.floor(Math.random() * 12) + 1  
+
+	$("#yourNumber").html(currentScore);
+	$("#numberToGuess").html(targetScore);
+
 }
 
+// Gives each gem a value and then adds to it
+var addValues = function(gems) {
+	
+	currentScore = currentScore + gems.value;
 
-  // Function created for when you click on the image you get a random number
-  $('.crystalImage').on('click', function(){
+	$("#yourScore").html(currentScore);
+	
+	checkWin();
 
-      counter = counter + parseInt($(this).data('num'));
+}
 
-    $('#yourNumber').text(counter);
+	// Function to check if user wins/scores match
+var checkWin = function() {
 
-      if (counter == numberToGuess){
+	
+	if(currentScore > targetScore) {
+		alert("You lost!");
+				// Add a loss 
+		losses++;
 
-        alert('You won!!!!');
+		$("#losses").html(losses);
 
-        playerWins++;
+				// Restart the game
+		startGame();
+	}
 
-      }else if( counter > numberToGuess){
+	else if (currentScore == targetScore) {
+		alert("You Win!");
+		
 
-        alert('You lost!');
-        playerLosses++;
-      }
-    });
-  };
+				// Adds a win
+		wins++;
 
+		$("#wins").html(wins);
 
+				// Restarts the game
+		startGame();
+	}
 
+}
 
+	// Starts the game and uses a function to give a number value to each gem
+startGame();
 
-     
+	$("#blue").click(function() {
+		addValues(gems.blue);
+	});
 
-    // shuffle(numbers);
-    // console.log(numbers);
-    // $('#number').text(numberToGuess);
-    // for (var i=0; i< numbers.length; i++){
-    //   var imageCrystal = $('<img>');
-    //   imageCrystal.attr('data-num', numbers[i]);
-    //   imageCrystal.attr('src', '/assets/images/gem1');
-    //   imageCrystal.attr('alt', 'crystals');
-    //   imageCrystal.addClass('crystalImage');
-    //   $('#crystals').append(imageCrystal);
-    // }
+	$("#pink").click(function() {
+		addValues(gems.pink);
+	});
 
+	$("#orange").click(function() {
+		addValues(gems.orange);
+	});
 
-
-    
-
-
-  // function gameComplete
-  // if (counter.toString() == numberToGuess()) {
-  //   playerWins++; // 
-  //   alert("You win!");
-
-  //   else if(counter > numberToGuess) {
-  //   playerLosses++;   
-  //   alert("You lose");
+	$("#yellow").click(function() {
+		addValues(gems.yellow);
+	});

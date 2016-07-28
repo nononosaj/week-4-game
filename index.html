@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title> Crystal Collector</title>
+	<title> Crystal / Gem Collector</title>
 
 	<!-- Reset CSS -->
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
@@ -13,10 +13,6 @@
 	<!-- CSS Style -->
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-	<!-- JQuery -->
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-	<script type="text/javascript" src="assets/javascript/game.js"></script>
-
 	<!-- Google fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
@@ -24,24 +20,30 @@
 </head>
 <body>
 
+<!-- Jumbotron title -->
 <div class="jumbotron">
-    <h1 class="text-center"> Crystal Collector</h1>
+    <h1 class="text-center"> Crystal/ Gem Collector</h1>
     <h3 class="text-center"> By the Power of Grayskull!!!</h3>
 </div>
 
 <!-- Game instructions -->
 <div class="instructions">
 	<p class="text-center"> You will be given a random number at the start of the game. </p>
-	<p class="text-center"> There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score. </p>
+	<p class="text-center"> There are four gems below. By clicking on a gem you will add a specific amount of points to your total score. </p>
 	<p class="text-center"> If you match your total score to the random number, </p> <h3 align="center"> you win!</h3> <p class="text-center"> If your total score goes above the random number, <h3 align= 'center'> you lose! </h3> </p>
-	<p class="text-center"> The value of each crystal is hidden from you until you click on it. </p>
-	<p class="text-center"> Each time the game starts, the value of each crystal will change. </p>
+	<p class="text-center"> The value of each gem is hidden from you until you click on it. </p>
+	<p class="text-center"> Each time the game starts, the value of each gem will change. </p>
 	<p class="text-center"> Good luck! </p>
 </div>
+			<!-- Images of gems -->
+	 		<div class="panel-body text-center">
+	            <img src="assets/images/gem1.jpeg" alt=" Gem 1 " id="blue">
+	            <img src="assets/images/gem2.jpeg" alt=" Gem 2 " id="pink">
+	            <img src="assets/images/gem3.jpeg" alt=" Gem 3 " id="orange"> 
+	            <img src="assets/images/gem4.jpeg" alt=" Gem 4" id="red"> 
+	        </div>
 
-	<div id="crystals"> </div>
-
-    	<div class="random"><h3>Random Score: <strong><span id="number"></span></strong></h3> </div>
+    	<div class="random"><h3>Random Score: <strong><span id="targetNumber"></span></strong></h3> </div>
     	
     	<hr>
 
@@ -62,3 +64,9 @@
 	
 </body>
 </html>
+
+<!-- JQuery -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+<!-- Javascript -->
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
